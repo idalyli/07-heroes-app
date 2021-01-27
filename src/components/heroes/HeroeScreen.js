@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
 import { getHeroById } from '../../selectors/getHeroById'
 export const HeroeScreen = ({history}) => {
     //extraer parametros de una url
     const { heroeId } = useParams();
 
-    const hero = getHeroById(heroeId)
+/*cualquier cambio que haga  se dispara nuevamente el procedimiento para obtener
+ los heroes, esto solo deberia llamarse si el publisher cambia, para ello se puede usar useMemo*/
+ 
+ const hero=useMemo(() => getHeroById(heroeId), [heroeId]);
+    //const hero = getHeroById(heroeId)
 
     //valida que si no existe el heroe redirija a la pagina de marvel
     if (!hero) {
@@ -36,14 +40,14 @@ export const HeroeScreen = ({history}) => {
 
     return (
         <div className="row mt-5">
-            <div className="col-4">
+            <div className="col-4 ">
                 <img
                     src={`../assets/heroes/${heroeId}.jpg`}
                     at={superhero}
-                    className="img-thumbnail"
+                    className="img-thumbnail animate__animated animate__fadeInLeft"
                 />
             </div>
-            <div className="col-8">
+            <div className="col-8 animate__animated animate__fadeIn">
                 <h3>{superhero}</h3>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"><b>Alter ego:</b>{alter_ego}</li>
