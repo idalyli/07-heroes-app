@@ -9,9 +9,10 @@ export const PrivateRoute = ({
 
 }) => {
 
-    console.log(rest.location.pathname)
+   // console.log(rest.location.pathname)
     //guardar la ultima pagina donde estuvo en la ultima sesion
-localStorage.setItem('lastPath',rest.location.pathname)
+localStorage.setItem('lastPath',rest.location.pathname);
+
     return (
         <Route {...rest}
             component={(props) => (
