@@ -12,7 +12,7 @@ export const SearchScreen = ({ history }) => {
     // para usar el search instalar queryString,pero se obtiene en string debo parsearlo
     //al desestructurar location.search parseado se igual a un "" para evita el error ya que por default quedaria undefined
     const { q = "" } = queryString.parse(location.search)
-    console.log(q)
+    //console.log(q)
 
     const [formValues, handleInputChange] = useForm({
         searchText: q

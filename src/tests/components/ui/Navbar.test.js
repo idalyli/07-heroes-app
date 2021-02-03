@@ -1,9 +1,9 @@
 const { mount } = require("enzyme")
 import '@testing-library/jest-dom';
 const { MemoryRouter, Router } = require("react-router-dom")
-const { AuthContext } = require("../../auth/AuthContext")
-const { Navbar } = require("../../components/ui/Navbar")
-const { types } = require("../../types/types")
+const { AuthContext } = require("../../../auth/AuthContext")
+const { Navbar } = require("../../../components/ui/Navbar")
+const { types } = require("../../../types/types")
 
 describe('Pruebas en <Navbar />', () => {
 
