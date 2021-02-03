@@ -1,6 +1,8 @@
 import React, {  useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
 import { getHeroById } from '../../selectors/getHeroById'
+
+
 export const HeroeScreen = ({ history }) => {
 
     //extraer parametros de una url
@@ -22,10 +24,8 @@ export const HeroeScreen = ({ history }) => {
     }
 
     
-    const handleReturn = ({}) =>{
+    const handleReturn = () =>{
       
-    
-    
           if(history.length<=2){
              history.push('/')
          }

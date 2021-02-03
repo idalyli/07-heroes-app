@@ -38,7 +38,7 @@ describe('Pruebas en authReducer', () => {
         }
 
         const state=authReducer({logged:true,name:"Pedro"},action)
-        console.log(state)
+        //console.log(state)
        // expect(state).toBe({logged:false})
         expect(state).toEqual({logged:false})
 
